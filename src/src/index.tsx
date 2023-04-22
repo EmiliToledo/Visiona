@@ -1,22 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
+import {BrowserRouter} from 'react-router-dom';
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import App from './App';
+import AppRoutes from './AppRoutes';
 import reportWebVitals from './reportWebVitals';
-import Navbar from "./components/Navbar";
-import BottomNavbar from "./components/BottomNavbar";
+import 'mdb-react-ui-kit/dist/css/mdb.min.css';
+import './styles/styles.scss'
 
-const root = ReactDOM.createRoot(
-    document.getElementById('root') as HTMLElement
-);
-root.render(
-    <React.StrictMode>
-        <Navbar/>
-        <App/>
-        <BottomNavbar/>
-    </React.StrictMode>
+ReactDOM.render(
+    <BrowserRouter>
+        <div className="font-poppins vh-100 w-100">
+            <AppRoutes/>
+        </div>
+    </BrowserRouter>,
+    document.getElementById('root')
 );
 
 reportWebVitals();
